@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>결과</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        .container { width: 100%; max-width: 800px; margin: 50px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        h1, h2 { text-align: center; color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { padding: 10px; border: 1px solid #ddd; }
+        th { background-color: #f2f2f2; }
+        pre { background-color: #f9f9f9; padding: 10px; border: 1px solid #ddd; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+        .btn { display: block; width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; text-align: center; text-decoration: none; }
+        .btn:hover { background-color: #45a049; }
+        .more { cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+    <script>
+        function showMore(event, fullText) {
+            event.target.parentElement.innerHTML = fullText;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>처리 결과</h1>
+        <div>
+            {{ result|safe }}
+        </div>
+        <h2>실행된 코드</h2>
+        <div>
+            {{ code|safe }}
+        </div>
+        <a href="/" class="btn">뒤로</a>
+        <br>
+        <a href="/download/?file_path={{ file_path }}" class="btn">결과 파일 다운로드</a>
+    </div>
+</body>
+</html>

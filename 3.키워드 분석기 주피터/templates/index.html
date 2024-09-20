@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>파일 업로드</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 0; }
+        .container { width: 100%; max-width: 600px; margin: 50px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        h1 { text-align: center; color: #333; }
+        form { margin-bottom: 20px; }
+        form h2 { font-size: 1.2em; margin-bottom: 10px; }
+        input[type="file"] { display: block; margin-bottom: 10px; }
+        input[type="submit"] { display: block; width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>파일 업로드</h1>
+        <form action="/extract-nouns/" enctype="multipart/form-data" method="post">
+            <h2>명사 추출</h2>
+            <input name="file" type="file" required>
+            <input type="submit" value="업로드">
+        </form>
+        <form action="/generate-stopwords/" enctype="multipart/form-data" method="post">
+            <h2>불용어 생성 및 제거</h2>
+            <input name="file" type="file" required>
+            <input type="submit" value="업로드">
+        </form>
+    </div>
+</body>
+</html>
